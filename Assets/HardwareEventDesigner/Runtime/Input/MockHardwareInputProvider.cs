@@ -19,7 +19,16 @@ namespace HardwareEventDesigner.Runtime
         public float GetValue(string channelId)
         {
             var entry = channels.Find(c => c.channelId == channelId);
-            return entry != null ? entry.value : 0f;
+
+            if (entry == null)
+            {
+                #if UNITY_EDITOR
+                Debug.LogWarning($"[MockHardwareInputProvider] No se encontró el canal '{channelId}'.");
+                #endif
+                return 0f;
+            }
+
+            return entry.value;
         }
 
         public void SetMockValue(string channelId, float value)

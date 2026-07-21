@@ -12,6 +12,11 @@ namespace HardwareEventDesigner.Runtime
         public UnityEvent onTriggered;
         public UnityEvent onValueChanged;
 
+        [Header("Value Change Detection")]
+        [Tooltip("Cambio mínimo para considerar que el valor realmente cambió (filtra ruido analógico).")]
+        [SerializeField] private float changeThreshold = 0.01f;
+
+
         private bool isActive;
         private float lastValue;
 
@@ -47,7 +52,7 @@ namespace HardwareEventDesigner.Runtime
                     break;
             }
 
-            if (!Mathf.Approximately(previousValue, value))
+            if (Mathf.Abs(previousValue - value) > changeThreshold)
             {
                 onValueChanged?.Invoke();
             }
@@ -89,6 +94,16 @@ namespace HardwareEventDesigner.Runtime
                 isActive = !isActive;
                 onTriggered?.Invoke();
             }
+        }
+
+        private void OnEnable()
+        {
+            HardwareInputManager.Register(this);
+        }
+
+        private void OnDisable()
+        {
+            HardwareInputManager.Unregister(this);
         }
     }
 }

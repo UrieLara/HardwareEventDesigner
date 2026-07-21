@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace HardwareEventDesigner.Runtime
@@ -9,7 +10,18 @@ namespace HardwareEventDesigner.Runtime
         [SerializeField] private MonoBehaviour _providerBehaviour;
 
         private IHardwareInputProvider _provider;
-        private HardwareEventListener[] _listeners;
+        private static readonly List<HardwareEventListener> _listeners = new List<HardwareEventListener>();
+
+        public static void Register(HardwareEventListener listener)
+        {
+            if (!_listeners.Contains(listener))
+                _listeners.Add(listener);
+        }
+
+        public static void Unregister(HardwareEventListener listener)
+        {
+            _listeners.Remove(listener);
+        }
 
         private void Awake()
         {
@@ -18,22 +30,22 @@ namespace HardwareEventDesigner.Runtime
             if (_provider == null)
             {
                 Debug.LogError("El provider asignado no implementa IHardwareInputProvider.");
+                enabled = false;
             }
 
-            _listeners = FindObjectsOfType<HardwareEventListener>();
         }
 
         private void Update()
         {
-            if (_provider == null) return;
-
-            foreach (var listener in _listeners)
+            for (int i = 0; i < _listeners.Count; i++)
             {
+                var listener = _listeners[i];
+                if (listener == null) continue; // objeto destruido entre frames
+
                 var channel = listener.Channel;
                 if (channel == null) continue;
-                float value = _provider.GetValue(channel.channelId);
 
-                listener.UpdateValue(value);
+                listener.UpdateValue(_provider.GetValue(channel.channelId));
             }
         }
     }

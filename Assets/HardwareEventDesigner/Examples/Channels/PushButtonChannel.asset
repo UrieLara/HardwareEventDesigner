@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   channelId: PushButton
   valueType: 0
-  threshold: 0.5
+  threshold: 0
   triggerMode: 0
   description: "Describe el prop\xF3sito de este canal."

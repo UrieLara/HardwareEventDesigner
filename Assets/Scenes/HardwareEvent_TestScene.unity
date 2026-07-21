@@ -169,34 +169,11 @@ MonoBehaviour:
   channel: {fileID: 11400000, guid: 3e2e998761fd4094b95b26aa5ebe7872, type: 2}
   onTriggered:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 376639422}
-        m_TargetAssemblyTypeName: DebugReceiver, Assembly-CSharp
-        m_MethodName: PrintTriggered
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   onValueChanged:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 376639422}
-        m_TargetAssemblyTypeName: DebugReceiver, Assembly-CSharp
-        m_MethodName: PrintValueChanged
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
+  changeThreshold: 0.01
 --- !u!1 &364336595
 GameObject:
   m_ObjectHideFlags: 0
@@ -244,34 +221,11 @@ MonoBehaviour:
   channel: {fileID: 11400000, guid: a457090c7b5f45444b67cf5c73d69ca1, type: 2}
   onTriggered:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 376639422}
-        m_TargetAssemblyTypeName: DebugReceiver, Assembly-CSharp
-        m_MethodName: PrintTriggered
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   onValueChanged:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 376639422}
-        m_TargetAssemblyTypeName: DebugReceiver, Assembly-CSharp
-        m_MethodName: PrintValueChanged
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
+  changeThreshold: 0.01
 --- !u!1 &376639421
 GameObject:
   m_ObjectHideFlags: 0
@@ -408,6 +362,52 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &551724122
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 551724124}
+  - component: {fileID: 551724123}
+  m_Layer: 0
+  m_Name: SerialHardwareProvider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &551724123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 551724122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06c592b97b74ea344b7ec25f5779c5a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  portName: COM3
+  baudRate: 115200
+--- !u!4 &551724124
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 551724122}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.007435589, y: -0.074355885, z: 0.008982225}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &572757331
 GameObject:
   m_ObjectHideFlags: 0
@@ -468,6 +468,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  changeThreshold: 0.01
 --- !u!4 &572757333
 Transform:
   m_ObjectHideFlags: 0
@@ -612,34 +613,11 @@ MonoBehaviour:
   channel: {fileID: 11400000, guid: 622498b630119994491160a3b7b75a18, type: 2}
   onTriggered:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 376639422}
-        m_TargetAssemblyTypeName: DebugReceiver, Assembly-CSharp
-        m_MethodName: PrintTriggered
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   onValueChanged:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 376639421}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
+  changeThreshold: 0.01
 --- !u!1 &2053225214
 GameObject:
   m_ObjectHideFlags: 0
@@ -669,7 +647,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af3ee6295745f1748a1469019b15d30b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _providerBehaviour: {fileID: 1470423474}
+  _providerBehaviour: {fileID: 551724123}
 --- !u!4 &2053225216
 Transform:
   m_ObjectHideFlags: 0
@@ -692,5 +670,6 @@ SceneRoots:
   - {fileID: 519420032}
   - {fileID: 2053225216}
   - {fileID: 1470423475}
+  - {fileID: 551724124}
   - {fileID: 376639423}
   - {fileID: 1029446533}

@@ -133,8 +133,8 @@ A physical joystick never returns the exact same value twice — there's natural
 ### Circuit
 
 <p align="center">
-  <img src="./Assets/HardwareEventDesigner/Documentation~/images/scene-view-overlay.png" width="48%" alt="Unity Scene View showing live channel values" />
-  <img src="./Assets/HardwareEventDesigner/Documentation~/images/physical-circuit.jpg" width="48%" alt="Physical ESP32 + joystick circuit" />
+  <img src="./Assets/HardwareEventDesigner/Documentation~/images/scene-view-overlay.png" width="60%" alt="Unity Scene View showing live channel values" />
+  <img src="./Assets/HardwareEventDesigner/Documentation~/images/physical-circuit.jpg" width="38%" alt="Physical ESP32 + joystick circuit" />
 </p>
 
 ### Schematic

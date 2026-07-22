@@ -1,9 +1,7 @@
 {
-    "name": "HardwareEventDesigner.Examples",
+    "name": "HardwareEventDesigner.Runtime",
     "rootNamespace": "",
-    "references": [
-        "GUID:a42a3e88e97dc11458fd32923b33ad18"
-    ],
+    "references": [],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,

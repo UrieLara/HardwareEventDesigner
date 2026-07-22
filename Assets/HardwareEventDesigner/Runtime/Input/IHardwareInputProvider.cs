@@ -1,3 +1,5 @@
+using HardwareEventDesigner.Runtime;
+
 namespace HardwareEventDesigner.Runtime
 {
     public interface IHardwareInputProvider
